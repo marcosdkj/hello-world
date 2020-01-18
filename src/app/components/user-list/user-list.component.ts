@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../shared/services/user.service';
 import { User } from 'src/app/shared/models/user.model';
+import {MatTableDataSource} from '@angular/material/table';
+
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
+  
 })
 export class UserListComponent implements OnInit {
 
   private userList:any;
-
+  private displayedColumns : string[] = ['id','name','birthdate','actions']
   constructor( private _users : UserService) { }
 
   ngOnInit() {
@@ -19,7 +22,7 @@ export class UserListComponent implements OnInit {
 
   loadData(){
     this._users.getAllUser().subscribe(
-      (x:User) => this.userList = x,
+      (x:User) => this.userList = new MatTableDataSource(x) ,
       err => console.log('Error'), // TODO : añadir mensaje de error
       () => console.log(this.userList, typeof this.userList)
     )
@@ -38,13 +41,20 @@ export class UserListComponent implements OnInit {
 
   deleteUser(id : number){
     this._users.deleteUser(id).subscribe(
-      () => this.loadData()
+      () => {
+        this.loadData();
+        
+      }
     )
   }
 
   updateUser(user : User){
     user.Name = 'editado'
     this._users.updateUser(user).subscribe(data =>{console.log('dione',data)})
+  }
+
+  applyFilter(filterValue: string) {
+    this.userList.filter = filterValue.trim().toLowerCase();
   }
 
 }

@@ -1,0 +1,18 @@
+<h3>Add new user</h3>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="birthdate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button type="submit">Submit</button>
+</form>
+
+
+{{userForm.value | json }}
