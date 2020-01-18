@@ -1,1 +1,10 @@
-<p>user-list works!</p>
+
+
+
+<input type="button" value="ADD" (click)="addUser()">
+
+<ul>
+  <li *ngFor="let user of userList">
+    {{user.id}} - {{user.name || 'no data'}} - {{user.birthdate || 'no data'}} <input type="button" value="delete" (click)="deleteUser(user.id)" > <input type="button" value="update" (click)="updateUser(user)">
+  </li>
+</ul>
