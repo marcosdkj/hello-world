@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WellcomeComponent } from './components/wellcome/wellcome.component';
 import {UserListComponent} from './components/user-list/user-list.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,11 @@ const routes: Routes = [
       },
       {
         path: 'listar',
-        component :UserListComponent
+        component :UserListComponent,
+      },
+      {
+          path: 'edit/:id',
+          loadChildren: './components/edit-user/edit-user.module#EditUserModule'
       }
     ]
   },

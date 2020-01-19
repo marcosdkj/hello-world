@@ -26,6 +26,13 @@ export class UserService {
     );
   }
 
+  getUser(id:number):Observable<User> {
+    return this.http.get<User>(Constants.baseUrl+'/'+id).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+
   postUser(user: User): Observable<User> {
     return this.http.post<User>(Constants.baseUrl, user, this.httpOptions).pipe(
       catchError(this.handleError)

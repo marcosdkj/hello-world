@@ -1,7 +1,7 @@
 <div class="container mb-4">
     <div class="col-4 mx-auto mt-2 text-center">
-        <h3> Crear nuevo usuario </h3>
-        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <h3>Edit user</h3>
+        <form [formGroup]="userForm" (ngSubmit)="updateUser()">
             <mat-form-field class="w100">
                 <input matInput placeholder="Nombre" formControlName="name" required>
                 <mat-error *ngIf="userForm.get('name').errors">
@@ -10,16 +10,16 @@
             </mat-form-field>
             <br>
             <mat-form-field class="w100">
-                <input matInput [matDatepicker]="picker" placeholder="Selecciona un dia" formControlName="birthdate">
+                <input matInput [matDatepicker]="picker" placeholder="Selecciona un día" formControlName="birthdate">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
                 <mat-error *ngIf="userForm.get('birthdate').errors">
                     El cumpleaños es <strong>obligatorio</strong>
                 </mat-error>
             </mat-form-field><br>
-            <button type="submit" mat-stroked-button color="primary" style="margin-top: 20px"
-                class="w100">Crear</button>
+            <button type="submit" mat-stroked-button color="primary" style="margin-top: 20px" class="w100">Editar usuario</button>
+            
         </form>
-        <button type="" mat-stroked-button color="accent" style="margin-top: 20px" class="w100" (click)="goBack()">Volver</button>
+        <button type="" mat-stroked-button color="accent" class="w100 mt-2" (click)="goBack()">Volver</button>
     </div>
 </div>

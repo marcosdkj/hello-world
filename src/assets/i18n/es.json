@@ -1,0 +1,8 @@
+{
+    "title": "Ejemplo de CRUD",
+    "create":"Crear Usuario",
+    "list": "Lista Usuario",
+
+    "english":"Inglés",
+    "spanish":"Español"
+}

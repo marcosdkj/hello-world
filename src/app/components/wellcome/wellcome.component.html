@@ -1,20 +1,15 @@
-<div class="container ">
-    <div class="col-12">
-        <div class="row">
-            <mat-toolbar>
-                <span>Users CRUD</span>
-                <span>Add <button mat-icon-button color="warn" aria-label="Example icon-button with a delete icon"
-                        routerLink="/create">
-                        <mat-icon>person_add</mat-icon>
-                    </button>
-                </span>
-                <span>Show list <button mat-icon-button color="warn" aria-label="Example icon-button with a delete icon"
-                    routerLink="/listar">
-                    <mat-icon>person_add</mat-icon>
-                </button>
-            </span>
-            </mat-toolbar>
-        </div>
+<div class="container border mt-4">
+    <div class="col-12 mt-3">
+
+        <h1 class="text-center">
+            {{'title' | translate }}
+        </h1>
+        <p class="text-center">
+            <button mat-raised-button color="accent" routerLink="/create">   {{'create' | translate }}</button>
+            <button mat-raised-button color="primary" class="ml-3"  routerLink="/listar">   {{'list' | translate }}</button>
+            <span class="badge badge-pill badge-primary ml-3" (click)="changeLanguagge('en')"> {{'english' | translate }}</span>
+            <span class="badge badge-pill badge-primary ml-3" (click)="changeLanguagge('es')"> {{'spanish' | translate }}</span>
+        </p>
 
         <router-outlet></router-outlet>
 

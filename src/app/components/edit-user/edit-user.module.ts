@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CreateUserRoutingModule } from './create-user-routing.module';
-import { CreateUserComponent } from './create-user.component';
+import { EditUserRoutingModule } from './edit-user-routing.module';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import {EditUserComponent} from './edit-user.component';
+
+
+
 
 @NgModule({
-  declarations: [CreateUserComponent],
+  declarations: [EditUserComponent],
   imports: [
     CommonModule,
-    CreateUserRoutingModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    EditUserRoutingModule
   ]
 })
-export class CreateUserModule { }
+export class EditUserModule { }

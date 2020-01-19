@@ -6,7 +6,8 @@ import {MatButtonModule,
    ,MatTableModule,
    MatInputModule,
    MatDatepickerModule,
-   MatNativeDateModule  
+   MatNativeDateModule,
+   MatTooltipModule
   } from '@angular/material';
 
 
@@ -17,7 +18,8 @@ const materialComponents = [
   MatTableModule,
   MatInputModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTooltipModule
 ]
 
 @NgModule({

@@ -1,0 +1,8 @@
+{
+    "title": "Crud Example",
+    "create":"Create User",
+    "list": "List User",
+
+    "english":"English",
+    "spanish":"Spanish"
+}
